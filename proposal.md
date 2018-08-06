@@ -25,7 +25,7 @@ Client/Customer always connect to single endpoint which always points to primary
 ### Updating Postgresql-as-a-Service with new features and OS security patches is fairly easy with rolling updates (bi-weekly updates) of clusters
 
 SAP MultiCloud platform supports rolling updates of clusters. Every postgresql cluster is updated bi-weekly with new features or bug fixes (if any). This keeps Postgresql-as-a-service improving. 
-OS security patches will be applied on all clusters once in a month. With this update we get rid of security vulnerability (if any).
+OS security patches will be applied on all clusters once in a month. With this update service get rid of security vulnerability (if any).
 
 ### SAP MultiCloud platform monitors health of every postgresql cluster
 
