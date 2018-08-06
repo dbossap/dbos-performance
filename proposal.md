@@ -8,7 +8,7 @@ In a cluster we have two postgresql nodes running. One node runs as a primary an
 
 [![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/clusterSetup.png?raw=true)](https://nodesource.com/products/nsolid)
 
-### Disaster Recovery situation is handled seamlessly with the help of Backup and Restore (B&R) and High Availability (HA) features
+### Disaster Recovery situation is handled seamlessly with the help of Backup and Restore (B&R) and High Availability (HA)
 
 Backup and Restore feature helps user to take online backup of running cluster on MultiCloud platform. The backup approach will differ for respective cloud providers. For e.g. on OpenStack we use 'tarball' approach, for other cloud providers (aws, azure and gcp) we use 'snapshot' based approach. Incase of failure/disaster situation this backup can be restored to avoid any data lose. Also at any point of time user can move the cluster to previous state(data) by restoring appropriate backup.
 
