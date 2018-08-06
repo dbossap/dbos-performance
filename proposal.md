@@ -31,7 +31,10 @@ OS security patches will be applied on all clusters once in a month. With this u
 
 Monitoring component captures various metrics of the postgresql cluster which helps to monitor the health of the each cluster. We capture some of the core metrics like memory usage, cpu usage, disk usage etc. Also metrics such as number active connections, bulk data read, replication status, availability, failover status (if any), backup status gives detail cluster information to identify any failure.
 
-All the metrics are captured by an agent running inside postgresql node and sent to riemann. Riemann pushes these metrics to influxdb where all the metrics will be stored. Grafana is used to show all the metrics on its dashboard. Grafana fetches these metrics from influxdb and displays it. Grafana gives user flexibility to select cluster, select date and time range etc. Monitoring is one of the important component SAP MultiCloud platform.
+All the metrics are captured by an agent running inside postgresql node and sent to riemann. Riemann pushes these metrics to influxdb where all the metrics will be stored. Grafana is used to show all the metrics on its dashboard. Grafana fetches these metrics from influxdb and displays it. Grafana gives user flexibility to select cluster, select date and time range etc. Monitoring is one of the important component SAP MultiCloud platform. Refer below figure for more understanding.
+
+[![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/grafana.png?raw=true)](https://nodesource.com/products/nsolid)
+
 
 ### Altering module of SAP MultiCloud platform quickly identifies and notifies the failures
 
