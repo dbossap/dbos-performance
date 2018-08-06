@@ -2,7 +2,7 @@
 
 Postgresql-as-a-Service is provided on large scale on SAP MultiCloud platform. The platform supports cloud provider(s) like [aws], [azure], [gcp] and [openstack]. Together on all infrastructures we provide approximately 8000 clusters of postgresql service.
 
-### Postgres cluster is robust and intelligent enough to remain up and running
+### Postgresql-as-a-Service is robust and intelligent enough to remain up and running
 
 In a cluster we have two postgresql nodes running. One node runs as a primary and other node runs as a secondary (also called as a hot standby). Secondary node is replicating primary with replication set to asynchronous mode. Primary node failure is mitigated by promoting secondary node to primary. So cluster is up and running always. To detect the the failure [pgpool] is used which continusly checks the heartbeat of postgresql process. We have [pgpool] running in three nodes inorder to form consensus. Refer below figure for more understanding.
 
