@@ -38,7 +38,7 @@ All the metrics are captured by an agent running inside postgresql node and send
 
 ### Alerting module of SAP MultiCloud platform quickly identifies and notifies the failures
 
-As a part of alerting module we have configured rules in [riemann] on metrics like availability, backup, disk usage etc. When these metrics does not adhere to these [riemann] rules an alert will be raised.
+As a part of alerting module alerting rules are configured in [riemann] on metrics like availability, backup, disk usage etc. When these metrics does not adhere to [riemann] alerting rules an alert will be raised.
 
 ### Debugging is independent of postgrsql cluster availabilty
 
