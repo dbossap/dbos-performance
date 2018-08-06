@@ -16,8 +16,11 @@ High availability (HA) feature helps to mitigate the failure situation. HA detec
 
 Client/Customer always connect to single endpoint which always points to primary node. Incase of failure situation, HA makes sure that single endpoint provided to client will always point to primary node with minimal downtime.
 
+### Integration with bosh and service-fabrik makes Postgresql-as-a-Service a scalable and independent component on MultiCloud platform
 
+Bosh is an important component of SAP MultiCloud platform. It is an open source project that offers a tool chain for release engineering, deployment & life-cycle management of large scale distributed services. All the postgresql clusters are deployed using bosh on MultiCloud platform. Bosh also helps in accessing and maintaining the cluster up and running. All the bosh life-cycle operations are triggered through service-fabrik.
 
+Service-fabrik is an open source component of SAP MultiCloud platform which acts as a broker between customers/clients and Postgresql-as-a-service. All the service operations are triggered through service fabrik. Some operations are scheduled for e.g. scheduled backup, service security updates etc. Operations such as create cluster, delete cluster, update cluster, upgrade cluster will be triggered by end user customers/clients through service-fabrik.
 
 
 # New Features!
