@@ -42,7 +42,7 @@ As a part of alerting module we have configured rules in [riemann] on metrics li
 
 ### Debugging is independent of postgrsql cluster availabilty
 
-All the logs generated out of service will be pushed to ELK stack so that user can access these logs incase of any failure. So debugging is independent of service instance's availability. Refer below figure
+All the logs generated out of service will be pushed to ELK stack so that user can access these logs incase of any failure. So debugging is independent of service instance availability. Refer below figure
 
 [![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/kibana.png?raw=true)](https://nodesource.com/products/nsolid)
 
