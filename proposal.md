@@ -12,7 +12,7 @@ In a cluster there are two postgresql nodes running. One node runs as a primary 
 
 Backup and Restore helps user to take online backup of running cluster on MultiCloud platform. The backup approach will differ for respective cloud providers. For e.g. on OpenStack we use 'tarball' approach, for other cloud providers (aws, azure and gcp) we use 'snapshot' based approach. Incase of failure/disaster situation this backup can be restored to avoid any data lose. Also at any point of time user can move the cluster to previous state(data) by restoring appropriate backup.
 
-High availability (HA) feature helps to mitigate the failure situation. HA detects primary node failure and promote standby node to primary. Split brain is the well know and dangerous problem that could occur in this architecture (Primary-standby). We have avoided this problem using STONITH operation. Here we kill the failed node after promoting the standby node to primary.
+High availability (HA) feature helps to mitigate the failure situation. HA detects primary node failure and promote standby node to primary. Split brain is the well know and dangerous problem that could occur in this architecture (Primary-standby). This problem is avoided using STONITH operation. Failed node is killed after promoting the standby node to primary.
 
 Client/Customer always connect to single endpoint which always points to primary node. Incase of failure situation, HA makes sure that single endpoint provided to client will always point to primary node with minimal downtime.
 
