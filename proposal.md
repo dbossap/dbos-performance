@@ -4,7 +4,7 @@ Postgresql-as-a-Service is provided on large scale on SAP MultiCloud platform. T
 
 ### Postgresql-as-a-Service is robust and intelligent enough to remain up and running
 
-In a cluster we have two postgresql nodes running. One node runs as a primary and other node runs as a secondary (also called as a hot standby). Secondary node is replicating primary with replication set to asynchronous mode. Primary node failure is mitigated by promoting secondary node to primary. So cluster is up and running always. To detect the the failure [pgpool] is used which continusly checks the heartbeat of postgresql process. We have [pgpool] running in three nodes inorder to form consensus. Refer below figure for more understanding.
+In a cluster we have two postgresql nodes running. One node runs as a primary and other node runs as a standby (also called as a hot standby). standby node is replicating primary with replication set to asynchronous mode. Primary node failure is mitigated by promoting standby node to primary. So cluster is up and running always. To detect the the failure [pgpool] is used which continusly checks the heartbeat of postgresql process. We have [pgpool] running in three nodes inorder to form consensus. Refer below figure for more understanding.
 
 [![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/clusterSetup2.png?raw=true)](https://nodesource.com/products/nsolid)
 
@@ -12,7 +12,7 @@ In a cluster we have two postgresql nodes running. One node runs as a primary an
 
 Backup and Restore helps user to take online backup of running cluster on MultiCloud platform. The backup approach will differ for respective cloud providers. For e.g. on OpenStack we use 'tarball' approach, for other cloud providers (aws, azure and gcp) we use 'snapshot' based approach. Incase of failure/disaster situation this backup can be restored to avoid any data lose. Also at any point of time user can move the cluster to previous state(data) by restoring appropriate backup.
 
-High availability (HA) feature helps to mitigate the failure situation. HA detects primary node failure and promote secondary node to primary. Split brain is the well know and dangerous problem that could occur in this architecture (Primary-secondary). We have avoided this problem using STONITH operation. Here we kill the failed node after promoting the secondary node to primary.
+High availability (HA) feature helps to mitigate the failure situation. HA detects primary node failure and promote standby node to primary. Split brain is the well know and dangerous problem that could occur in this architecture (Primary-standby). We have avoided this problem using STONITH operation. Here we kill the failed node after promoting the standby node to primary.
 
 Client/Customer always connect to single endpoint which always points to primary node. Incase of failure situation, HA makes sure that single endpoint provided to client will always point to primary node with minimal downtime.
 
