@@ -41,6 +41,10 @@ As a part of alerting module we have configured rules in riemann on metrics like
 
 All the logs generated out of service will be pushed to ELK stack so that user can access these logs incase of any failure. So debugging is independent of service instance's availability.
 
+### SAP MultiCloud platform supports variety of plans with major version upgrade
+
+Currently we support both 9.4 and 9.6 version's  of postgresql with different t-shirt sizes (plans). As per requirement user has the flexibility to choose the plan. Plan provided will be like v9.4-small, v9.6-small, v9.6-large etc. Each plan is unique combination of disk, cpu, memory etc. 
+We also support major version upgrade of postgresql service. This feature easily allows user to upgrade its postgresql instance to next higher version.
 
 # New Features!
 
