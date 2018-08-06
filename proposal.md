@@ -6,7 +6,7 @@ Postgresql-as-a-Service is provided on large scale on SAP MultiCloud platform. T
 
 In a cluster we have two postgresql nodes running. One node runs as a primary and other node runs as a secondary (also called as a hot standby). Secondary node is replicating primary with replication set to asynchronous mode. Primary node failure is mitigated by promoting secondary node to primary. So cluster is up and running always. To detect the the failure [pgpool] is used which continusly checks the heartbeat of postgresql process. We have [pgpool] running in three nodes inorder to form consensus. Refer below figure for more understanding.
 
-[![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/clusterSetup.png?raw=true)](https://nodesource.com/products/nsolid)
+[![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/clusterSetup2.png?raw=true)](https://nodesource.com/products/nsolid)
 
 ### Disaster Recovery situation is handled seamlessly with the help of Backup and Restore (B&R) and High Availability (HA)
 
