@@ -1,6 +1,6 @@
 # Administering large scale PostgreSQL installations on SAP MultiCloud platform
 
-SAP MultiCloud Platform is an open platform-as-a-service (PaaS) product that provides core platform and backing services, for building and extending cloud applications on multiple cloud infrastructure providers. SAP MultiCloud Platform presently supports AWS, OpenStack, Azure and Google Cloud Platform (GCP). Together on all infrastructures platform has approximately 8000 clusters of postgresql clusters up and running.
+SAP MultiCloud Platform is an open platform-as-a-service (PaaS) product that provides core platform and backing services, for building and extending cloud applications on multiple cloud infrastructure providers. SAP MultiCloud Platform presently supports AWS, OpenStack, Azure and Google Cloud Platform (GCP). Together on all infrastructures platform has approximately 8000 postgresql clusters up and running.
 
 ### Postgresql-as-a-Service is robust and intelligent enough to remain up and running
 
