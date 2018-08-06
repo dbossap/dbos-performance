@@ -36,7 +36,7 @@ All the metrics are captured by an agent running inside postgresql node and send
 [![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/grafana.png?raw=true)](https://nodesource.com/products/nsolid)
 
 
-### Altering module of SAP MultiCloud platform quickly identifies and notifies the failures
+### Alerting module of SAP MultiCloud platform quickly identifies and notifies the failures
 
 As a part of alerting module we have configured rules in [riemann] on metrics like availability, backup, disk usage etc. When these metrics does not adhere to these [riemann] rules an alert will be raised.
 
