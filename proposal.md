@@ -4,7 +4,7 @@ SAP MultiCloud Platform is an open platform-as-a-service (PaaS) product that pro
 
 ### Postgresql-as-a-Service is robust and intelligent enough to remain up and running
 
-In a cluster we have two postgresql nodes running. One node runs as a primary and other node runs as a standby (also called as a hot standby). standby node is replicating primary with replication set to asynchronous mode. Primary node failure is mitigated by promoting standby node to primary. So cluster is up and running always. To detect the the failure [pgpool] is used which continusly checks the heartbeat of postgresql process. We have [pgpool] running in three nodes inorder to form consensus. Refer below figure for more understanding.
+In a cluster there are two postgresql nodes running. One node runs as a primary and other node runs as a standby (also called as a hot standby). standby node is replicating primary with replication set to asynchronous mode. Primary node failure is mitigated by promoting standby node to primary. So cluster is up and running always. To detect the the failure [pgpool] is used which continusly checks the heartbeat of postgresql process. We have [pgpool] running in three nodes inorder to form consensus. Refer below figure for more understanding.
 
 [![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/clusterSetup2.png?raw=true)](https://nodesource.com/products/nsolid)
 
