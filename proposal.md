@@ -27,6 +27,20 @@ Service-fabrik is an open source component of SAP MultiCloud platform which acts
 SAP MultiCloud platform supports rolling updates of clusters. Every postgresql cluster is updated bi-weekly with new features or bug fixes (if any). This keeps us improving. 
 OS security patches will be applied on all clusters once in a month. With this update we get rid of security vulnerability (if any).
 
+### SAP MultiCloud platform monitors health of every postgresql cluster
+
+Monitoring component captures various metrics of the postgresql cluster which helps to monitor the health of the each cluster. We capture some of the core metrics like memory usage, cpu usage, disk usage etc. Also metrics such as number active connections, bulk data read, replication status, availability, failover status (if any), backup status gives detail cluster information to identify any failure.
+
+All the metrics are captured by an agent running inside postgresql node and sent to riemann. Riemann pushes these metrics to influxdb where all the metrics will be stored. Grafana is used to show all the metrics on its dashboard. Grafana fetches these metrics from influxdb and displays it. Grafana gives user flexibility to select cluster, select date and time range etc. Monitoring is one of the important component SAP MultiCloud platform.
+
+### Altering module of SAP MultiCloud platform quickly identifies and notifies the failures
+
+As a part of alerting module we have configured rules in riemann on metrics like availability, backup, disk usage etc. When these metrics does not adhere to these riemann rules an alert will be raised.
+
+### Debugging is independent of postgrsql cluster availabilty
+
+All the logs generated out of service will be pushed to ELK stack so that user can access these logs incase of any failure. So debugging is independent of service instance's availability.
+
 
 # New Features!
 
