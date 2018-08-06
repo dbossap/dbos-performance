@@ -16,11 +16,11 @@ High availability (HA) feature helps to mitigate the failure situation. HA detec
 
 Client/Customer always connect to single endpoint which always points to primary node. Incase of failure situation, HA makes sure that single endpoint provided to client will always point to primary node with minimal downtime.
 
-### Integration with bosh and service-fabrik makes Postgresql-as-a-Service a scalable and independent component on MultiCloud platform
+### Integration with [bosh] and [service-fabrik] makes Postgresql-as-a-Service a scalable and independent component on MultiCloud platform
 
-Bosh is an important component of SAP MultiCloud platform. It is an open source project that offers a tool chain for release engineering, deployment & life-cycle management of large scale distributed services. All the postgresql clusters are deployed using bosh on MultiCloud platform. Bosh also helps in accessing and maintaining the cluster up and running. All the bosh life-cycle operations are triggered through service-fabrik.
+[Bosh] is an important component of SAP MultiCloud platform. It is an open source project that offers a tool chain for release engineering, deployment & life-cycle management of large scale distributed services. All the postgresql clusters are deployed using bosh on MultiCloud platform. Bosh also helps in accessing and maintaining the cluster up and running. All the bosh life-cycle operations are triggered through [service-fabrik].
 
-Service-fabrik is an open source component of SAP MultiCloud platform which acts as a broker between customers/clients and Postgresql-as-a-service. All the service operations are triggered through service fabrik. Some operations are scheduled for e.g. scheduled backup, service security updates etc. Operations such as create cluster, delete cluster, update cluster, upgrade cluster will be triggered by end user customers/clients through service-fabrik.
+[Service-fabrik] is an open source component of SAP MultiCloud platform which acts as a broker between customers/clients and Postgresql-as-a-service. All the service operations are triggered through [service-fabrik]. Some operations are scheduled for e.g. scheduled backup, cluster security updates etc. Operations such as create cluster, delete cluster, update cluster, upgrade cluster will be triggered by end user customers/clients through [service-fabrik].
 
 ### Updating Postgresql-as-a-Service with new features and OS security patches is fairly easy with rolling updates (bi-weekly updates) of clusters
 
@@ -31,7 +31,7 @@ OS security patches will be applied on all clusters once in a month. With this u
 
 Monitoring component captures various metrics of the postgresql cluster which helps to monitor the health of the each cluster. We capture some of the core metrics like memory usage, cpu usage, disk usage etc. Also metrics such as number active connections, bulk data read, replication status, availability, failover status (if any), backup status gives detail cluster information to identify any failure.
 
-All the metrics are captured by an agent running inside postgresql node and sent to riemann. Riemann pushes these metrics to influxdb where all the metrics will be stored. Grafana is used to show all the metrics on its dashboard. Grafana fetches these metrics from influxdb and displays it. Grafana gives user flexibility to select cluster, select date and time range etc. Monitoring is one of the important component SAP MultiCloud platform. Refer below figure for more understanding.
+All the metrics are captured by an agent running inside postgresql node and sent to riemann. Riemann pushes these metrics to influxdb where all the metrics will be stored. Grafana is used to show all the metrics on its dashboard. Grafana fetches these metrics from influxdb and displays it. Grafana gives user flexibility to select cluster, select date and time range etc. Monitoring is one of the important component SAP MultiCloud platform. Refer below figure
 
 [![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/grafana.png?raw=true)](https://nodesource.com/products/nsolid)
 
@@ -42,7 +42,9 @@ As a part of alerting module we have configured rules in riemann on metrics like
 
 ### Debugging is independent of postgrsql cluster availabilty
 
-All the logs generated out of service will be pushed to ELK stack so that user can access these logs incase of any failure. So debugging is independent of service instance's availability.
+All the logs generated out of service will be pushed to ELK stack so that user can access these logs incase of any failure. So debugging is independent of service instance's availability. Refer below figure
+
+[![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/kibana.png?raw=true)](https://nodesource.com/products/nsolid)
 
 ### SAP MultiCloud platform supports variety of plans with major version upgrade
 
@@ -198,24 +200,10 @@ MIT
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
-   [dill]: <https://github.com/joemccann/dillinger>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
-   [john gruber]: <http://daringfireball.net>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
-
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
-   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
-   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
+   [bosh]: <https://github.com/joemccann/dillinger>
+   [pgpool]: <https://github.com/joemccann/dillinger.git>
+   [grafana]: <https://grafana.com/>
+   [riemann]: <http://riemann.io/>
+   [influxdb]: <https://www.influxdata.com/time-series-platform/influxdb/>
+   [service-fabrik]: <https://github.com/cloudfoundry-incubator/service-fabrik-broker>
 
