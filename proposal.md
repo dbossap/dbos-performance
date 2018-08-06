@@ -1,10 +1,10 @@
 # Administering large scale PostgreSQL installations on SAP MultiCloud platform
 
-Postgresql-as-a-Service is provided on large scale on SAP MultiCloud platform. The platform supports cloud provider(s) like aws, azure, gcp and openstack. Together on all infrastructures we provide approximately 5000 clusters of postgresql service.
+Postgresql-as-a-Service is provided on large scale on SAP MultiCloud platform. The platform supports cloud provider(s) like [aws], [azure], [gcp] and [openstack]. Together on all infrastructures we provide approximately 5000 clusters of postgresql service.
 
 ### Postgres cluster is robust and intelligent enough to remain up and running
 
-In a cluster we have two postgresql nodes running. One node runs as a primary and other node runs as a secondary (also called as a hot standby). Secondary node is replicating primary with replication set to asynchronous mode. Primary node failure is mitigated by promoting secondary node to primary. So cluster is up and running always. To detect the the failure pgpool is used which continusly checks the heartbeat of postgresql process. We have pgpool running in three nodes inorder to form consensus. Refer below figure for more understanding.
+In a cluster we have two postgresql nodes running. One node runs as a primary and other node runs as a secondary (also called as a hot standby). Secondary node is replicating primary with replication set to asynchronous mode. Primary node failure is mitigated by promoting secondary node to primary. So cluster is up and running always. To detect the the failure [pgpool] is used which continusly checks the heartbeat of postgresql process. We have [pgpool] running in three nodes inorder to form consensus. Refer below figure for more understanding.
 
 [![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/clusterSetup.png?raw=true)](https://nodesource.com/products/nsolid)
 
@@ -18,7 +18,7 @@ Client/Customer always connect to single endpoint which always points to primary
 
 ### Integration with [bosh] and [service-fabrik] makes Postgresql-as-a-Service a scalable and independent component on MultiCloud platform
 
-[Bosh] is an important component of SAP MultiCloud platform. It is an open source project that offers a tool chain for release engineering, deployment & life-cycle management of large scale distributed services. All the postgresql clusters are deployed using bosh on MultiCloud platform. Bosh also helps in accessing and maintaining the cluster up and running. All the bosh life-cycle operations are triggered through [service-fabrik].
+[Bosh] is an important component of SAP MultiCloud platform. It is an open source project that offers a tool chain for release engineering, deployment & life-cycle management of large scale distributed services. All the postgresql clusters are deployed using [bosh] on MultiCloud platform. [Bosh] also helps in accessing and maintaining the cluster up and running. All the [bosh] life-cycle operations are triggered through [service-fabrik].
 
 [Service-fabrik] is an open source component of SAP MultiCloud platform which acts as a broker between customers/clients and Postgresql-as-a-service. All the service operations are triggered through [service-fabrik]. Some operations are scheduled for e.g. scheduled backup, cluster security updates etc. Operations such as create cluster, delete cluster, update cluster, upgrade cluster will be triggered by end user customers/clients through [service-fabrik].
 
@@ -31,14 +31,14 @@ OS security patches will be applied on all clusters once in a month. With this u
 
 Monitoring component captures various metrics of the postgresql cluster which helps to monitor the health of the each cluster. We capture some of the core metrics like memory usage, cpu usage, disk usage etc. Also metrics such as number active connections, bulk data read, replication status, availability, failover status (if any), backup status gives detail cluster information to identify any failure.
 
-All the metrics are captured by an agent running inside postgresql node and sent to riemann. Riemann pushes these metrics to influxdb where all the metrics will be stored. Grafana is used to show all the metrics on its dashboard. Grafana fetches these metrics from influxdb and displays it. Grafana gives user flexibility to select cluster, select date and time range etc. Monitoring is one of the important component SAP MultiCloud platform. Refer below figure
+All the metrics are captured by an agent running inside postgresql node and sent to [riemann]. [Riemann] pushes these metrics to [influxdb] where all the metrics will be stored. [Grafana] is used to show all the metrics on its dashboard. [Grafana] fetches these metrics from [influxdb] and displays it. [Grafana] gives user flexibility to select cluster, select date and time range etc. Monitoring is one of the important component SAP MultiCloud platform. Refer below figure
 
 [![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/grafana.png?raw=true)](https://nodesource.com/products/nsolid)
 
 
 ### Altering module of SAP MultiCloud platform quickly identifies and notifies the failures
 
-As a part of alerting module we have configured rules in riemann on metrics like availability, backup, disk usage etc. When these metrics does not adhere to these riemann rules an alert will be raised.
+As a part of alerting module we have configured rules in [riemann] on metrics like availability, backup, disk usage etc. When these metrics does not adhere to these [riemann] rules an alert will be raised.
 
 ### Debugging is independent of postgrsql cluster availabilty
 
@@ -199,7 +199,10 @@ MIT
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
-
+   [aws]: <https://aws.amazon.com>
+   [azure]: <https://azure.microsoft.com/en-us/>
+   [gcp]: <https://cloud.google.com/>
+   [openstack]: <https://www.openstack.org/>
    [bosh]: <https://github.com/joemccann/dillinger>
    [pgpool]: <https://github.com/joemccann/dillinger.git>
    [grafana]: <https://grafana.com/>
