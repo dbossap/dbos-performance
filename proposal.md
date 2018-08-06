@@ -22,6 +22,11 @@ Bosh is an important component of SAP MultiCloud platform. It is an open source 
 
 Service-fabrik is an open source component of SAP MultiCloud platform which acts as a broker between customers/clients and Postgresql-as-a-service. All the service operations are triggered through service fabrik. Some operations are scheduled for e.g. scheduled backup, service security updates etc. Operations such as create cluster, delete cluster, update cluster, upgrade cluster will be triggered by end user customers/clients through service-fabrik.
 
+### Updating Postgresql-as-a-Service with new features and OS security patches is fairly easy with rolling updates (bi-weekly updates) of clusters
+
+SAP MultiCloud platform supports rolling updates of clusters. Every postgresql cluster is updated bi-weekly with new features or bug fixes (if any). This keeps us improving. 
+OS security patches will be applied on all clusters once in a month. With this update we get rid of security vulnerability (if any).
+
 
 # New Features!
 
