@@ -48,7 +48,7 @@ All the logs generated out of service will be pushed to ELK stack so that user c
 
 ### SAP MultiCloud platform supports variety of plans with major version upgrade
 
-Currently we support both 9.4 and 9.6 version's  of postgresql with different t-shirt sizes (plans). As per requirement user has the flexibility to choose the plan. Plan provided will be like v9.4-small, v9.6-small, v9.6-large etc. Each plan is unique combination of disk, cpu, memory etc. 
+Currently we support both 9.4 and 9.6 version  of postgresql with different t-shirt sizes (plans). As per requirement user has the flexibility to choose the plan. Plan provided will be like v9.4-small, v9.6-small, v9.6-large etc. Each plan is unique combination of disk, cpu, memory etc. 
 We also support major version upgrade of postgresql service. This feature easily allows user to upgrade its postgresql instance to next higher version.
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
