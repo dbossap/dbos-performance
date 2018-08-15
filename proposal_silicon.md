@@ -18,14 +18,14 @@ Each postgresql cluster is Highly Available with two postgresql nodes. One node 
 
 ### No language dependency, Just a single-endpoint
 
-  Applications connecting to postgresql service should have mechanism to connect via single-endpoint/single-ip. Not all drivers unlike [jdbc] are intelligent enough to make distinction of modes of postgreSQL instances. Drivers expect the endpoint of the primary node at any point of time. Thus single-endpoint is of high importance in a cloud environment. 
+  Applications connecting to postgresql service should have mechanism to connect via single endpoint/single ip. Not all drivers unlike [jdbc] are intelligent enough to make distinction of modes of postgreSQL instances. Drivers expect the endpoint of the primary node at any point of time. Thus single endpoint is of high importance in a cloud environment. 
   
-    SAP MultiCloud Platform supports single-endpoint for service instance in multi availabilty zone architecture.
+    SAP MultiCloud Platform supports single endpoint for service instance in multi availabilty zone architecture.
     
 #### Due to diversity in the cloud architecture of cloud providers different solutions are applied for respective cloud providers.
 
 
-In case of [Azure] and [GCP], load balancer is associated with each service instance. The client-ip is attached to load balancer as the frontend ip address. At any point in time, load balancer always forwards the traffic to primary node with help of heath check prob and agent running on postgresql VMs
+In case of [Azure] and [GCP], load balancer is associated with each service instance. The client ip is attached to load balancer as the frontend ip address. At any point in time, load balancer always forwards the traffic to primary node with help of heath check prob and agent running on postgresql VMs
 
 - Cluster Setup
 
@@ -38,7 +38,7 @@ In case of [AWS], load balancer approach does not work due limitations form aws 
 ![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/PMS1.png?raw=true)
 
 
-In case of [OpenStack], allowed-address-pair feature is used. In this case client-ip (single ip) is attached to both the postgrsql VMs. During failure of primary node, secondary node is promoted to priamry. Next [arping] is done from new primary node to inform other VMs in the network.
+In case of [OpenStack], allowed-address-pair feature is used. In this case client ip (single ip) is attached to both the postgrsql VMs. During failure of primary node, secondary node is promoted to priamry. Next [arping] is done from new primary node to inform other VMs in the network.
 
 - Cluster Setup
 ![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/openStack.png?raw=true)
