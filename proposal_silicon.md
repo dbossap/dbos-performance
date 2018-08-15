@@ -25,7 +25,7 @@ Each postgresql cluster is Highly Available with two postgresql nodes. One node 
 #### Due to diversity in the cloud architecture of cloud providers different solutions are applied for respective cloud providers.
 
 
-In case of [Azure] and [GCP], load balancer is associated with each service instance. The client-ip is attached to load balancer as the frontend ip address. At any point in time, load balancer always forwards the traffic to primary with help of heath check prob and agent running on postgresql VMs
+In case of [Azure] and [GCP], load balancer is associated with each service instance. The client-ip is attached to load balancer as the frontend ip address. At any point in time, load balancer always forwards the traffic to primary node with help of heath check prob and agent running on postgresql VMs
 
 - Cluster Setup
 
