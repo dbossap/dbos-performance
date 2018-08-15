@@ -19,7 +19,7 @@ Each postgresql cluster is Highly Available with two postgresql nodes. One node 
 
   Applications connecting to postgresql service should have mechanism to connect via single-endpoint/single-ip. Not all drivers unlike [jdbc] are intelligent enough to make distinction of modes of postgreSQL instances. Drivers expect the endpoint of the primary node at any point of time. Thus single-endpoint is of high importance in a cloud environment. 
   
-    SAP MultiCloud Platform supports single-endpoint for service instance in multi availabilty zone architecture
+    SAP MultiCloud Platform supports single-endpoint for service instance in multi availabilty zone architecture.
     
 #### Due to diversity in the cloud architecture of cloud providers different solutions are applied for respective cloud providers.
 
