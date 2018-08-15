@@ -50,8 +50,7 @@ Following figures shows failover scenario
 
 
 
-   In case of [OpenStack] Cloud, allowed-address-pair feature is used. In this case client-ip (single ip) is attached to both the postgrsql VMs.
-  During failure of primary node, secondary node is promoted. Next [arping] is done from new primary node to inform other VMs in the network.
+In case of [OpenStack] Cloud, allowed-address-pair feature is used. In this case client-ip (single ip) is attached to both the postgrsql VMs. During failure of primary node, secondary node is promoted. Next [arping] is done from new primary node to inform other VMs in the network.
 
     
     Failover time in case of OpenStack is in order of 5 seconds.
