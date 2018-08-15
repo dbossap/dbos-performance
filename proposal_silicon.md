@@ -2,7 +2,7 @@
 
 SAP MultiCloud Platform is an open platform-as-a-service (PaaS) product that provides core platform and backing services, for building and extending cloud applications on multiple cloud infrastructure providers.
 
-    SAP MultiCloud Platform presently supports [AWS], [OpenStack], [Azure] and [GCP].
+    SAP MultiCloud Platform presently supports AWS, OpenStack, Azure and GCP.
 
 ### Highly Available Postgresql Cluster
 
