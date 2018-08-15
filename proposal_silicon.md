@@ -22,7 +22,7 @@ Each postgresql cluster is Highly Available with two postgresql nodes. One node 
   
     SAP MultiCloud Platform supports single endpoint for service instance in multi availabilty zone architecture.
     
-#### Due to diversity in the cloud architecture of cloud providers different solutions are applied for respective cloud providers.
+#### Due to diversity in the cloud architecture of cloud providers, different solutions are applied for respective cloud providers.
 
 
 In case of [Azure] and [GCP], load balancer is associated with each service instance. The client ip is attached to load balancer as the frontend ip address. At any point in time, load balancer always forwards the traffic to primary node with help of heath check prob and agent running on postgresql VMs
