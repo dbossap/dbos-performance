@@ -29,7 +29,7 @@ In case of [Azure] and [GCP], load balancer is associated with each service inst
     Failover time in case of [Azure] and [GCP] is in order of 10 seconds.
 
 - Cluster Setup
-![N|Solid](https://github.com/dineshmenon/pubrepo/blob/master/resc/ha/Azure-Implementation.png?raw=true)
+![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/Azure-Implementation.png?raw=true)
 
 In case of [AWS], load balancer approach does not work due limitations form aws side. To solve this problem [Route53] with [MultiValue] policy, pgpool node and [linux-iptables] is used. From secondary node all requests are forwarded to primary node using [linux-iptables]. In case of primary node failure [SecondaryPrivateIP] is floated to pgpool node in the same zone and [linux-iptables] rule is added from pgpool node to new primary node.
 
