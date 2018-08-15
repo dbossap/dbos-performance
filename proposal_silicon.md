@@ -16,7 +16,7 @@ Each postgresql cluster is Highly Available with two postgresql nodes. One node 
   
   Once the failover is done, [STONITH] is performed to avoid split brain problem. [Bosh] is responsible for "resurrecting" postgreSQL vms when it becomes unresponsive or dead and it is also responsible for applying required binaries to all postgresql VMs.
 
-### No language dependency, Just a single-endpoint
+### No language dependency, Just a single endpoint
 
   Applications connecting to postgresql service should have mechanism to connect via single endpoint/single ip. Not all drivers unlike [jdbc] are intelligent enough to make distinction of modes of postgreSQL instances. Drivers expect the endpoint of the primary node at any point of time. Thus single endpoint is of high importance in a cloud environment. 
   
