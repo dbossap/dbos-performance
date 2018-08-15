@@ -11,6 +11,7 @@ One of the core services provided by SAP MultiCloud Platform is PostgreSQL-as-a-
     Together on all infrastructures platform has approximately 8000 postgresql clusters.
 
 Each postgresql cluster is Highly Available with two postgresql nodes. One node runs as a primary and other node as standby replicating primary in [asynchronous-mode]. Primary node failure is mitigated by promoting standby node to primary. This make sure that there is always a primary node running. To detect the the failure [pgpool] is used which continuously checks the heartbeat of postgresql process. [pgpool] node is running in three nodes in order to form consensus. Refer below figure for more understanding.
+
 ![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/postgresql-Cluster.png?raw=true)
   
   Once the failover is done, [STONITH] is performed to avoid split brain problem. [Bosh] is responsible for "resurrecting" postgreSQL vms when it becomes unresponsive or dead and for applying required binaries to all VMs.
