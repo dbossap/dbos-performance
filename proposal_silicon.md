@@ -23,19 +23,22 @@ Each postgresql cluster is Highly Available with two postgresql nodes. One node 
     
 #### Due to diversity in the cloud architecture of cloud providers different solutions are applied for respective cloud providers.
 
-  In case of [Azure] and [GCP], load balancer is associated with each service instance. The client-ip is
+  - In case of [Azure] and [GCP], load balancer is associated with each service instance. The client-ip is
   attached to load balancer as the frontend ip address. At any point in time, load balancer always forwards the traffic to primary with help of heath check prob and agent running on postgresql VMs
+
 
     Failover time in case of [Azure] and [GCP] is in order of 10 seconds.
 
-  In case of [AWS], load balancer approach does not work due limitations form aws side. To solve this problem
+  - In case of [AWS], load balancer approach does not work due limitations form aws side. To solve this problem
   [Route53] with [MultiValue] policy, pgpool node and [linux-iptables] is used. From secondary node all requests are forwarded to primary node using [linux-iptables].
   In case of primary node failure [SecondaryPrivateIP] is floated to pgpool node in the same zone and [linux-iptables] rule is added from pgpool node to new primary node.
  
+    
     Failover time in case of AWS is in order of 5 seconds.
 
-  In case of [OpenStack] Cloud, allowed-address-pair feature is used. In this case client-ip (single ip) is attached to both the postgrsql VMs.
+  - In case of [OpenStack] Cloud, allowed-address-pair feature is used. In this case client-ip (single ip) is attached to both the postgrsql VMs.
   During failure of primary node, secondary node is promoted. Next [arping] is done from new primary node to inform other VMs in the network.
 
+    
     Failover time in case of OpenStack is in order of 5 seconds.
 
