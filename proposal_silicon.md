@@ -35,12 +35,14 @@ In case of [Azure] and [GCP], load balancer is associated with each service inst
 In case of [AWS], load balancer approach does not work due limitations form aws side. To solve this problem [Route53] with MultiValue policy, pgpool node and [linux-iptables] is used. From secondary node all requests are forwarded to primary node using [linux-iptables] rules. In case of primary node failure SecondaryPrivateIP is floated to pgpool node in the same zone and [linux-iptables] rule is added from pgpool node to new primary node.
 
  - Cluster Setup
+
 ![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/PMS1.png?raw=true)
 
 
 In case of [OpenStack], allowed-address-pair feature is used. In this case client ip (single ip) is attached to both the postgrsql VMs. During failure of primary node, secondary node is promoted to priamry. Next [arping] is done from new primary node to inform other VMs in the network.
 
 - Cluster Setup
+
 ![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/openStack.png?raw=true)
 
 [aws]: <https://aws.amazon.com>
