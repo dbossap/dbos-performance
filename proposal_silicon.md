@@ -31,7 +31,9 @@ Each postgresql cluster is Highly Available with two postgresql nodes. One node 
 
    In case of [AWS], load balancer approach does not work due limitations form aws side. To solve this problem
   [Route53] with [MultiValue] policy, pgpool node and [linux-iptables] is used. From secondary node all requests are forwarded to primary node using [linux-iptables].
-  In case of primary node failure [SecondaryPrivateIP] is floated to pgpool node in the same zone and [linux-iptables] rule is added from pgpool node to new primary node.
+  In case of primary node failure [SecondaryPrivateIP] is floated to pgpool node in the same zone and [linux-iptables] rule is added from pgpool node to new primary node.    Failover time in case of AWS is in order of 5 seconds.
+
+    Failover time in case of AWS is in order of 5 seconds.
   
 Following figures shows failover scenario
 
@@ -46,7 +48,7 @@ Following figures shows failover scenario
 
 
 
-    Failover time in case of AWS is in order of 5 seconds.
+
 
    In case of [OpenStack] Cloud, allowed-address-pair feature is used. In this case client-ip (single ip) is attached to both the postgrsql VMs.
   During failure of primary node, secondary node is promoted. Next [arping] is done from new primary node to inform other VMs in the network.
