@@ -47,8 +47,8 @@ In case of [OpenStack], allowed-address-pair feature is used. In this case clien
 [azure]: <https://azure.microsoft.com/en-us/>
 [gcp]: <https://cloud.google.com/>
 [openstack]: <https://www.openstack.org/>
-[bosh]: <https://github.com/joemccann/dillinger>
-[pgpool]: <https://github.com/joemccann/dillinger.git>
+[bosh]: <https://bosh.io/docs/>
+[pgpool]: <http://www.pgpool.net/mediawiki/index.php/Main_Page>
 [STONITH]: <https://en.wikipedia.org/wiki/STONITH>
 [arping]: <https://en.wikipedia.org/wiki/Arping>
 [jdbc]: <https://en.wikipedia.org/wiki/Java_Database_Connectivity>
