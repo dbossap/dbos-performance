@@ -14,7 +14,7 @@ Each postgresql cluster is Highly Available with two postgresql nodes. One node 
 
 ![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/postgresql-Cluster.png?raw=true)
   
-  Once the failover is done, [STONITH] is performed to avoid split brain problem. [Bosh] is responsible for "resurrecting" postgreSQL vms when it becomes unresponsive or dead and it is also responsible for applying required binaries to all VMs.
+  Once the failover is done, [STONITH] is performed to avoid split brain problem. [Bosh] is responsible for "resurrecting" postgreSQL vms when it becomes unresponsive or dead and it is also responsible for applying required binaries to all postgresql VMs.
 
 ### No language dependency, Just a single-endpoint
 
