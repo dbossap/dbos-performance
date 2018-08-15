@@ -18,7 +18,9 @@ Each postgresql cluster is Highly Available with two postgresql nodes. One node 
 
   Applications connecting to postgresql service should have mechanism to connect via single-endpoint/single-ip. Not all drivers unlike [jdbc] are intelligent enough to make distinction of modes of postgreSQL instances. Drivers expect the endpoint of the primary node at any point of time. Thus single-endpoint is of high importance in a cloud environment. 
   
-    SAP MultiCloud Platform supports single-endpoint for service instance. Due to diversity in the cloud architecture of cloud providers different solutions are applied for respective cloud providers.
+    SAP MultiCloud Platform supports single-endpoint for service instance. 
+    
+#### Due to diversity in the cloud architecture of cloud providers different solutions are applied for respective cloud providers.
 
   In case of [Azure] and [GCP], load balancer is associated with each service instance. The client-ip is
   attached to load balancer as the frontend ip address. At any point in time, load balancer always forwards the traffic to primary with help of heath check prob and agent running on postgresql VMs
