@@ -45,3 +45,5 @@ In case of [OpenStack] Cloud, allowed-address-pair feature is used. In this case
     
     Failover time in case of OpenStack is in order of 5 seconds.
 
+- Cluster Setup
+![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/openStack.png?raw=true)
