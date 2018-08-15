@@ -32,8 +32,20 @@ Each postgresql cluster is Highly Available with two postgresql nodes. One node 
    In case of [AWS], load balancer approach does not work due limitations form aws side. To solve this problem
   [Route53] with [MultiValue] policy, pgpool node and [linux-iptables] is used. From secondary node all requests are forwarded to primary node using [linux-iptables].
   In case of primary node failure [SecondaryPrivateIP] is floated to pgpool node in the same zone and [linux-iptables] rule is added from pgpool node to new primary node.
- 
-    
+  
+Following figures shows failover scenario
+
+ - Cluster Setup
+ ![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/PMS1.png?raw=true)
+- Primary Node Failure
+ ![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/PMS2.png?raw=true)
+- Floating SecondaryPrivateIP(VIP) to pgpool-node
+ ![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/PMS3.png?raw=true)
+- Old primary-node joins cluster as secondary-node
+ ![N|Solid](https://github.com/dbossap/dbos-performance/blob/master/PMS4.png?raw=true)
+
+
+
     Failover time in case of AWS is in order of 5 seconds.
 
    In case of [OpenStack] Cloud, allowed-address-pair feature is used. In this case client-ip (single ip) is attached to both the postgrsql VMs.
